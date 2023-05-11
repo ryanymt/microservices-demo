@@ -35,5 +35,6 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'gcr-sqreem'
+        repository: 'aml-proj-341607'
         command: 'push'
         tags: 'latest'
