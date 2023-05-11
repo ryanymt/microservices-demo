@@ -32,7 +32,7 @@ stages:
         targetType: 'inline'
         script: |
           # Write your commands here
-          docker images
+          docker images | grep -v REPO
 #          docker images | grep -v REPO | head -n1| cut -d " " -f 3
 #          dTag= `docker images | grep -v REPO | head -n1| cut -d " " -f 3`
 #          echo $dTag
