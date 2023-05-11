@@ -26,12 +26,14 @@ stages:
 #        command: build
 #        dockerfile: '$(Build.SourcesDirectory)/src/adservice/Dockerfile'
 #        tags: 'v1'
+
     - task: Bash@3
       inputs:
         targetType: 'inline'
         script: |
           # Write your commands here
-          docker images | grep -v REPO | head -n1| cut -d " " -f 3
+          docker images
+#          docker images | grep -v REPO | head -n1| cut -d " " -f 3
 #          dTag= `docker images | grep -v REPO | head -n1| cut -d " " -f 3`
 #          echo $dTag
 #          docker tag $dTag gcr.io/aml-proj-341607:v1
