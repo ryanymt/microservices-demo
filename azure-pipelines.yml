@@ -39,7 +39,7 @@ stages:
 #          docker images | grep -v REPO | head -n1 | awk '{print $3}'
 #          docker images | grep -v REPO | head -n1| cut -d " " -f 3
 ##          dTag= $(docker images | grep -v REPO | head -n1| awk '{print $3}')
-          echo $dTag
+#          echo $dTag
 #          docker tag $dTag gcr.io/aml-proj-341607:v1
     - task: Docker@2
       displayName: 'Login to Container Registry'
