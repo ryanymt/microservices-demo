@@ -26,6 +26,12 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/src/adservice/Dockerfile'
         tags: 'v1'
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your commands here
+          docker image ls
     - task: Docker@2
       displayName: 'Login to Container Registry'
       inputs:
@@ -33,6 +39,7 @@ stages:
         containerRegistry: 'gcr-sqreem'
 
     - task: Docker@2
+      displayName: 'Push image'
       inputs:
         containerRegistry: 'gcr-sqreem'
         repository: 'aml-proj-341607'
